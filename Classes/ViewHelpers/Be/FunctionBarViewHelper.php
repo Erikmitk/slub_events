@@ -188,26 +188,6 @@ class FunctionBarViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\Be\AbstractBack
     }
 
     /**
-     * Returns the Datepicker img
-     *
-     * @return string html output
-     */
-    protected function getDatePickerIcon()
-    {
-
-        return $this->getSpriteIcon(
-            'actions-edit-pick-date',
-            array(
-                'style' => 'cursor:pointer;',
-                'id' => 'picker-tceforms-datefield-1',
-                'class' => 't3-icon t3-icon-actions t3-icon-actions-edit t3-icon-edit-pick-date'
-            )
-        );
-
-    }
-
-
-    /**
      * Renders a record list as known from the TYPO3 list module
      * Note: This feature is experimental!
      *
@@ -239,9 +219,6 @@ class FunctionBarViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\Be\AbstractBack
                 break;
             case 'geniusbar':
                 $content = $this->getGeniusBarIcon($event);
-                break;
-            case 'datepicker':
-                $content = $this->getDatePickerIcon();
                 break;
         }
 
