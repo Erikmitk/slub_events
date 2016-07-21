@@ -1,4 +1,13 @@
-function checkBoxes(objThis) {
+jQuery( document ).ready(function($) {
+    $(function () {
+        $('#datetimepicker1').datetimepicker({
+            locale: 'de',
+            calendarWeeks: true,
+            format: 'DD-MM-YYYY'
+        });
+    });
+});
+    function checkBoxes(objThis) {
     // Checkbox selected? (true/false)
     var blnChecked = objThis.checked;
     // parent node

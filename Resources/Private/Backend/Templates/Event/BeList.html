@@ -13,7 +13,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <div xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
 
 	<f:section name="eventListing">
-		<table class="tx_slubevents">
+		<table class="tx_slubevents table table-bordered table-striped">
 			<tr>
 				<th>
 					<se:be.functionBar icon="new"/>
@@ -126,7 +126,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 	<f:section name="content">
 		{namespace se=Slub\SlubEvents\ViewHelpers}
 
-		<div class="slub-event-list">
+		<div class="container-fluid">
 			<h1>
 				<f:translate key="tx_slubevents.be.eventmanagement"/>
 			</h1>
@@ -134,7 +134,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 			<f:flashMessages/>
 
 			<f:form action="beList" section="results" name="searchParameter" method="post">
-				<table class="tx_slubevents">
+				<table class="tx_slubevents table table-bordered">
 					<tr>
 						<th><label for="tceforms-datefield-1">
 							<f:translate key="tx_slubevents_domain_model_event.start_date_time"/>
@@ -149,14 +149,20 @@ Otherwise your changes will be overwritten the next time you save the extension 
 					</tr>
 					<tr>
 						<td class="td-input">
-							<span class="t3-tceforms-input-wrapper-date">
-								<f:form.textfield id="tceforms-datefield-1"
-												  property="selectedStartDateStamp"
-												  size="12"
-												  value="{selectedStartDateStamp}"/>
-								 <se:be.functionBar icon="datepicker" event="{event}" />
-							</span>
+							<div class="form-group">
+								<div class='input-group date' id='datetimepicker1'>
+									<f:form.textfield id="datetimepicker1"
+													  property="selectedStartDateStamp"
+													  size="12"
+													  value="{selectedStartDateStamp}"
+													   class="form-control" />
+									<span class="input-group-addon">
+										<span class="glyphicon glyphicon-calendar"></span>
+									</span>
+								</div>
+							</div>
 						</td>
+
 						<td class="foldtree">
 							<f:render partial="Event/CategoryTree"
 									  section="categoryTree"
