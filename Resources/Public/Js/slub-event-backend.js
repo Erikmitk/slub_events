@@ -6,8 +6,55 @@ jQuery( document ).ready(function($) {
             format: 'DD-MM-YYYY'
         });
     });
+
+    var validator = $( "#newEventForm" ).validate({
+        ignore: 'input[type="button"],input[type="submit"]',
+        errorClass: "has-error",
+        validClass: "has-success",
+        highlight: function(element, errorClass, validClass) {
+            $(element).parent("div").addClass(errorClass).removeClass(validClass);
+        },
+        unhighlight: function(element, errorClass, validClass) {
+            $(element).parent("div").removeClass(errorClass).addClass(validClass);
+        },
+        rules: {
+            genius_bar: {
+                required: true
+            },
+            recurring: {
+                required: true
+            },
+            requiregroup: {
+                required: true
+            },
+        }
+    });
+
+
+
+    $("#tab-eventtype .radiogroup label").click(function () {
+
+        var labelSelected = $(this).text().trim();
+
+        $('.nav-tabs > .active').next('li').find('a').trigger('click');
+
+        $('button.option-genius_bar').text(labelSelected);
+
+    });
+
+    $("#tab-recurring .radiogroup label").click(function () {
+
+        var labelSelected = $(this).text().trim();
+
+        $('.nav-tabs > .active').next('li').find('a').trigger('click');
+
+        $('button.option-recurring').text(labelSelected);
+
+    });
+
 });
-    function checkBoxes(objThis) {
+
+function checkBoxes(objThis) {
     // Checkbox selected? (true/false)
     var blnChecked = objThis.checked;
     // parent node
@@ -61,6 +108,7 @@ CheckBoxContacts.init = function () {
     if (!document.getElementById) return;
     var chkbox = document.getElementById("checkbox-all-contacts");
     var selectlist = document.getElementById('field-contact-search');
+    if (!selectlist) return;
     var selected = 0;
     for (var i = 0; i < selectlist.length; i++) {
         if (selectlist.options[i].selected == true)

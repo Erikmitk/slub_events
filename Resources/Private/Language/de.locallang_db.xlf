@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2016-01-20T13:35:58Z">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2016-07-23T09:09:34Z">
 		<header>
 			<generator>LFEditor</generator>
 		</header>
@@ -9,13 +9,13 @@
 			<source>Category</source>
 			<target>Kategorie</target>
 		</trans-unit>
+		<trans-unit id="tx_slubevents_domain_model_category.description" approved="yes">
+			<source>Description</source>
+			<target>Beschreibung</target>
+		</trans-unit>
 		<trans-unit id="tx_slubevents_domain_model_category.genius_bar" approved="yes">
 			<source>Knowledge Bar Category</source>
 			<target>Wissensbar-Kategorie</target>
-		</trans-unit>
-		<trans-unit id="tx_slubevents_domain_model_category.description">
-			<source>Description</source>
-			<target>Beschreibung</target>
 		</trans-unit>
 		<trans-unit id="tx_slubevents_domain_model_category.parent" approved="yes">
 			<source>Parent Category</source>
@@ -56,6 +56,10 @@
 		<trans-unit id="tx_slubevents_domain_model_discipline.name" approved="yes">
 			<source>Name</source>
 			<target>Bezeichnung</target>
+		</trans-unit>
+		<trans-unit id="tx_slubevents_domain_model_discipline.parent" approved="yes">
+			<source>Parent discipline</source>
+			<target>Übergeordnete Fachdisziplin</target>
 		</trans-unit>
 		<trans-unit id="tx_slubevents_domain_model_event" approved="yes">
 			<source>Event</source>
@@ -121,10 +125,6 @@
 			<source>Discipline</source>
 			<target>Fachdisziplin</target>
 		</trans-unit>
-		<trans-unit id="tx_slubevents_domain_model_discipline.parent" approved="yes">
-			<source>Parent discipline</source>
-			<target>Übergeordnete Fachdisziplin</target>
-		</trans-unit>
 		<trans-unit id="tx_slubevents_domain_model_event.end" approved="yes">
 			<source></source>
 			<target>Ende</target>
@@ -165,13 +165,17 @@
 			<source>Min Subscriber</source>
 			<target>Mindesteilnehmerzahl</target>
 		</trans-unit>
+		<trans-unit id="tx_slubevents_domain_model_event.no_search" approved="yes">
+			<source>Exclude from search</source>
+			<target>Aus Suche ausschließen</target>
+		</trans-unit>
 		<trans-unit id="tx_slubevents_domain_model_event.onlinesurvey" approved="yes">
 			<source>Online Survey</source>
 			<target>Online Umfrage</target>
 		</trans-unit>
-		<trans-unit id="tx_slubevents_domain_model_event.no_search" approved="yes">
-			<source>Exlude from Search</source>
-			<target>Aus Suche ausschließen</target>
+		<trans-unit id="tx_slubevents_domain_model_event.recurring" approved="yes">
+			<source>Recurring Event</source>
+			<target>Terminserie</target>
 		</trans-unit>
 		<trans-unit id="tx_slubevents_domain_model_event.start" approved="yes">
 			<source></source>

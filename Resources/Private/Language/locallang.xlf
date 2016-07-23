@@ -20,6 +20,9 @@
 		<trans-unit id="be.hideEvent">
 			<source>Hide Event</source>
 		</trans-unit>
+		<trans-unit id="be.form.singe_event">
+			<source>Single Event</source>
+		</trans-unit>
 		<trans-unit id="be.icsInvitation">
 			<source>ICS Invitation</source>
 		</trans-unit>
@@ -58,6 +61,9 @@
 		</trans-unit>
 		<trans-unit id="be.unhideEvent">
 			<source>Unhide Event</source>
+		</trans-unit>
+		<trans-unit id="be.createNewEvent">
+			<source>Create New Event</source>
 		</trans-unit>
 		<trans-unit id="paginate_back">
 			<source>Back</source>
@@ -160,6 +166,9 @@
 		</trans-unit>
 		<trans-unit id="tx_slubevents_domain_model_event.genius_bar">
 			<source>Knowledge Bar</source>
+		</trans-unit>
+		<trans-unit id="tx_slubevents_domain_model_event.recurring">
+			<source>Recurring Event</source>
 		</trans-unit>
 		<trans-unit id="tx_slubevents_domain_model_event.individual_appointment">
 			<source>Indivdual Appointment</source>

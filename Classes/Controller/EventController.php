@@ -385,6 +385,16 @@ class EventController extends AbstractController
     }
 
     /**
+     * action beEventNewStep1
+     **
+     * @return void
+     */
+    public function beNewEventAction()
+    {
+
+    }
+
+    /**
      * action listMonth
      *
      * @return void

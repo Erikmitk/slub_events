@@ -17,6 +17,13 @@ Otherwise your changes will be overwritten the next time you save the extension 
 			<tr>
 				<th>
 					<se:be.functionBar icon="new"/>
+					<f:link.action action="beNewEvent" controller="Event"
+								   title="<f:translate key='be.createNewEvent' />"
+								   arguments="{step : '0'}">
+						<button type="button" class="btn btn-default" aria-label="Left Align">
+							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+						</button>
+					</f:link.action>
 				</th>
 				<th>
 					<f:translate key="tx_slubevents_domain_model_event.title"/>
@@ -185,6 +192,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 										   optionLabelField="name"
 										   multiple="1"
 										   size="15"
+										   class="form-control"
 										   value="{contactsSelected}"/>
 						</td>
 					</tr>

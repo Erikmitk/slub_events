@@ -80,7 +80,7 @@ if (TYPO3_MODE === 'BE') {
         'slubevents',    // Submodule key
         '',              // Position
         [
-            'Event'      => 'beList, beCopy, show, new, create, edit, update, delete, listOwn',
+            'Event'      => 'beList, beCopy, show, new, create, edit, update, delete, listOwn, beNewEvent',
             'Category'   => '',
             'Subscriber' => 'beIcsInvitation, list, beList, beOnlineSurvey',
             'Location'   => '',
