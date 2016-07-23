@@ -1,0 +1,101 @@
+<f:layout name="Default" />
+
+
+<f:section name="content">
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#tab-eventtype" role="tab" data-toggle="tab">Veranstaltung / Wissensbar</a></li>
+        <li><a href="#tab-recurring" role="tab" data-toggle="tab">Einzel-/Serientermin</a></li>
+        <li><a href="#tab-eventdetails" role="tab" data-toggle="tab">Termindetails</a></li>
+    </ul>
+
+
+    <f:form id="newEventForm" class="form-horizontal" method="post">
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="tab-eventtype">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Was für einen Termin möchten Sie anlegen?</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">&nbsp;</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <div class="btn-group btn-block radiogroup" data-toggle="buttons">
+                            <label for="type_normal" class="btn btn-default btn-lg btn-block">
+                                <f:form.radio name="genius_bar" id="type_normal" value="0" />
+                                    <f:translate key="tx_slubevents_domain_model_event"/>
+                            </label>
+                            <label for="type_gbevent" class="btn btn-default btn-lg btn-block">
+                                <f:form.radio name="genius_bar" class="required" id="type_gbevent" value="1" />
+                                    <f:translate key="tx_slubevents_domain_model_event.genius_bar"/>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">&nbsp;</div>
+                </div>
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="tab-recurring">
+
+                <div class="row">
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-success option-genius_bar"></button>
+                    </div>
+                    <div class="col-md-10">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Wählen Sie, ob Sie einen einzelnen Termin oder eine Terminserie anlegen möchten.</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <div class="btn-group btn-block radiogroup" data-toggle="buttons">
+                            <label for="single_event" class="btn btn-default btn-lg btn-block">
+                                <f:form.radio name="recurring" id="single_event" value="0" />
+                                    <f:translate key="be.form.singe_event"/>
+                            </label>
+                            <label for="recurring_event" class="btn btn-default btn-lg btn-block">
+                                <f:form.radio name="recurring" class="required" id="recurring_event" value="1" />
+                                    <f:translate key="tx_slubevents_domain_model_event.recurring"/>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">&nbsp;</div>
+                </div>
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="tab-eventdetails">
+                <div class="row">
+                    <div class="col-md-3">
+                        <button type="button" class="btn btn-success option-genius_bar"></button>
+                        <button type="button" class="btn btn-success option-recurring"></button>
+                    </div>
+                    <div class="col-md-9">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-top: 15px;">
+                    <div class="col-xs-5 col-xs-offset-3">
+                        <button type="submit" class="btn btn-success">Validate</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </f:form>
+
+</f:section>

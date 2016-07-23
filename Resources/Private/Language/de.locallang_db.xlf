@@ -180,6 +180,9 @@
 		<trans-unit id="tx_slubevents_domain_model_event.selecttopic" approved="yes">
 			<source>Please select topic</source>
 			<target>Bitte Thema wählen</target>
+		<trans-unit id="tx_slubevents_domain_model_event.recurring" approved="yes">
+			<source>Recurring Event</source>
+			<target>Terminserie</target>
 		</trans-unit>
 		<trans-unit id="tx_slubevents_domain_model_event.start" approved="yes">
 			<source></source>

@@ -28,14 +28,14 @@ return [
         'requestUpdate'            => 'genius_bar, external_registration',
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, start_date_time, all_day, end_date_time, sub_end_date_time, teaser, description, min_subscriber, max_subscriber, audience, sub_end_date_info_sent, no_search, genius_bar, cancelled, categories, subscribers, location, discipline, contact',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, start_date_time, all_day, end_date_time, sub_end_date_time, teaser, description, min_subscriber, max_subscriber, audience, sub_end_date_info_sent, no_search, genius_bar, recurring, cancelled, categories, subscribers, location, discipline, contact',
     ],
     'types'     => [
         // Single event
         '0' => [
             'showitem' => '' .
                 '--div--;Was und Wann,' .
-                'genius_bar,title,' .
+                'genius_bar,recurring,title,' .
                 '--palette--;' . $LL . 'tx_slubevents_domain_model_event.start;paletteStart,' .
                 '--palette--;' . $LL . 'tx_slubevents_domain_model_event.end;paletteEnd,' .
                 'location,' .
@@ -381,6 +381,14 @@ return [
         'genius_bar'               => [
             'exclude' => 0,
             'label'   => $LL . 'tx_slubevents_domain_model_event.genius_bar',
+            'config'  => [
+                'type'    => 'check',
+                'default' => 0,
+            ],
+        ],
+        'recurring'               => [
+            'exclude' => 0,
+            'label'   => $LL . 'tx_slubevents_domain_model_event.recurring',
             'config'  => [
                 'type'    => 'check',
                 'default' => 0,
