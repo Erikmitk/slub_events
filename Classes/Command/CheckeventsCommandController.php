@@ -32,7 +32,6 @@ namespace Slub\SlubEvents\Command;
  * @author    Alexander Bigga <alexander.bigga@slub-dresden.de>
  */
 use Slub\SlubEvents\Helper\EmailHelper;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\MathUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 
