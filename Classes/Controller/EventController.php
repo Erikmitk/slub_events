@@ -184,6 +184,7 @@ class EventController extends AbstractController
      * action create
      *
      * @param \Slub\SlubEvents\Domain\Model\Event $newEvent
+     * @ignorevalidation $newEvent
      *
      * @return void
      */
@@ -191,7 +192,7 @@ class EventController extends AbstractController
     {
         $this->eventRepository->add($newEvent);
         $this->addFlashMessage('Your new Event was created.');
-        $this->redirect('list');
+        $this->redirect('beList');
     }
 
     /**
@@ -391,6 +392,13 @@ class EventController extends AbstractController
      */
     public function beNewEventAction()
     {
+        // get the categories
+        $categories = $this->categoryRepository->findAllTree();
+        $this->view->assign('categoriesSelected', array());
+        $this->view->assign('categories', $categories);
+
+        $contacts = $this->contactRepository->findAllSorted();
+        $this->view->assign('contacts', $contacts);
 
     }
 

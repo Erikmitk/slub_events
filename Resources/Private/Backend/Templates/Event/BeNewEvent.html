@@ -1,3 +1,4 @@
+{namespace se=Slub\SlubEvents\ViewHelpers}
 <f:layout name="Default" />
 
 
@@ -9,8 +10,7 @@
         <li><a href="#tab-eventdetails" role="tab" data-toggle="tab">Termindetails</a></li>
     </ul>
 
-
-    <f:form id="newEventForm" class="form-horizontal" method="post">
+    <f:form id="newEventForm" class="form-horizontal" action="create" name="newEvent" object="{newEvent}" noCacheHash="1"  method="post" >
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="tab-eventtype">
 
@@ -79,6 +79,7 @@
             </div>
 
             <div role="tabpanel" class="tab-pane" id="tab-eventdetails">
+
                 <div class="row">
                     <div class="col-md-3">
                         <button type="button" class="btn btn-success option-genius_bar"></button>
@@ -87,6 +88,32 @@
                     <div class="col-md-9">
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+
+                            <f:if condition="{event.geniusBar}">
+                                <f:then>
+                                    <f:render partial="Event/FormFieldsGb"  arguments="{subscriber : subscriber, readonly : loggedIn, event : event, errors : errors}" />
+                                    <f:form.hidden name="category" value="{category}"/>
+                                </f:then>
+                                <f:else>
+                                    <f:render partial="Event/FormFields"  arguments="{_all}" />
+                                </f:else>
+                            </f:if>
+
+                            <div class="submit">
+                                <div class="subscription">
+                                    <f:form.submit class="button submit" value="<f:translate key='tx_slubevents_domain_model_subscriber.submit_registration' />" />
+                                </div>
+                                <f:link.external class="button linkback" uri="javascript:history.back();"><f:translate key="paginate_back" /></f:link.external>
+                            </div>
+
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+
                 <div class="form-group" style="margin-top: 15px;">
                     <div class="col-xs-5 col-xs-offset-3">
                         <button type="submit" class="btn btn-success">Validate</button>

@@ -1,0 +1,20 @@
+{namespace se=Slub\SlubEvents\ViewHelpers}
+<f:section name="categoryTreeProperty">
+    <ul class="category_tree">
+        <f:for each="{categories}" key="id" as="category">
+            <li>
+                <f:form.checkbox id="category-{category.item.uid}"
+                                 property="categories"
+                                 value="{category.item.uid}"
+                                 multiple="1"
+                />
+                <label for="category-{category.item.uid}" title="{category.item.uid}">{category.item.title}</label>
+
+                <f:if condition="{category.children}">
+                    <f:render section="categoryTreeProperty"
+                              arguments="{categories: category.children, categoriesSelected: categoriesSelected}"/>
+                </f:if>
+            </li>
+        </f:for>
+    </ul>
+</f:section>

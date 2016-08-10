@@ -16,7 +16,11 @@
 	2: '{f:uri.resource(path:\'Js/Contrib/JQuery/additional-methods.min.js\')}',
 	3: '{f:uri.resource(path:\'Js/Contrib/Moment/moment.min.js\')}',
 	4: '{f:uri.resource(path:\'Js/Contrib/Moment/locale/de.js\')}',
-	5: '{f:uri.resource(path:\'Js/Contrib/Bootstrap/bootstrap-datetimepicker.min.js\')}'}">
+	5: '{f:uri.resource(path:\'Js/Contrib/Bootstrap/bootstrap-datetimepicker.min.js\')}',
+	6: '{f:uri.resource(path:\'Js/Contrib/bonsai/jquery.qubit.js\')}',
+	7: '{f:uri.resource(path:\'Js/Contrib/bonsai/jquery.bonsai.js\')}',
+	8: '{f:uri.resource(path:\'Js/Contrib/tinymce/tinymce.min.js\')}',
+	9: '{f:uri.resource(path:\'Js/Contrib/tinymce/jquery.tinymce.min.js\')}'}">
 	<div class="typo3-fullDoc">
 		<div id="typo3-docheader">
 			<div id="typo3-docheader-row1">
@@ -33,6 +37,7 @@
 					<f:be.menus.actionMenu>
 						<f:be.menus.actionMenuItem label="<f:translate key='tx_slubevents.be.eventmanagement' />" controller="" action="beList" />
 						<f:be.menus.actionMenuItem label="<f:translate key='tx_slubevents.be.subscriberlist' />" controller="Subscriber" action="beList" />
+						<f:be.menus.actionMenuItem label="<f:translate key='be.createNewEvent' />" controller="Event" action="beNewEvent" />
 					</f:be.menus.actionMenu>
 
 				</div>

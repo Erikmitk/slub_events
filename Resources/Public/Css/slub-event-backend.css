@@ -61,35 +61,52 @@ table.tx_slubevents ul {
 	padding: 3px 0 3px 1.5em;
 }
 
-table.tx_slubevents .foldicon {
-	font-size: 150%;
-	width: 20px;
-	float: left;
-	position: relative;
-	left: -2px;
-	text-align: center;
-}
-
-table.tx_slubevents .open input[type="checkbox"] {
-
-}
-
-table.tx_slubevents td.foldtree > ul > li.open,
-table.tx_slubevents td.foldtree > ul > li.closed {
-	position: relative;
-	left: -20px;
-	border-left: none;
-}
-
-table.tx_slubevents td.foldtree > ul > li.open ul li {
-	border-left: 1px dashed #ccc;
-}
-
-table.tx_slubevents td.foldtree > ul > li.open ul li.closed {
-	border-left: 1px dashed #a00;
-}
-
 #field-contact-search {
+}
+
+/*
+ *------
+ * jquery bonsai
+ * http://simonwade.me/jquery-bonsai/
+ * -----
+ *
+ * */
+
+.bonsai,
+.bonsai li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+.bonsai li {
+  position: relative;
+  padding-left: 1.3em; /* padding for the thumb */
+}
+
+li .thumb {
+  margin: 4px 0 0 -1em; /* negative margin into the padding of the li */
+  position: absolute;
+  cursor: pointer;
+}
+
+li.has-children > .thumb:after {
+  content: '▸';
+}
+
+li.has-children.expanded > .thumb:after {
+  content: '▾';
+}
+
+li.collapsed > ol.bonsai {
+  height: 0;
+  overflow: hidden;
+}
+
+.bonsai .all,
+.bonsai .none {
+  cursor: pointer;
 }
 
 /*
