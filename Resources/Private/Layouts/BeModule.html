@@ -1,14 +1,15 @@
-{namespace se=Slub\SlubEvents\ViewHelpers}
-<se:be.container
+<f:be.container
 	pageTitle="Veranstaltungsmanagement"
-	enableJumpToUrl="TRUE"
 	enableClickMenu="FALSE"
-	loadPrototype="FALSE"
 	loadExtJs="FALSE"
 	loadExtJsTheme="FALSE"
-	addCssFile="{f:uri.resource(path:'Css/slub-event-backend.css')}"
-	addJsDatepicker="FALSE">
-	<div class="typo3-fullDoc">
+	loadJQuery="TRUE"
+	includeCssFiles="{
+		0: '{f:uri.resource(path:\'Css/Contrib/Bootstrap/bootstrap.min.css\')}',
+		1: '{f:uri.resource(path:\'Css/Contrib/Bootstrap/bootstrap-datetimepicker.min.css\')}',
+		2: '{f:uri.resource(path:\'Css/slub-event-backend.css\')}'
+	}">
+<div class="typo3-fullDoc">
 		<div id="typo3-docheader">
 			<div id="typo3-docheader-row1">
 				<div class="buttonsleft">
@@ -41,4 +42,4 @@
 			</div>
 		</div>
 	</div>
-</se:be.container>
+</f:be.container>
