@@ -1,49 +1,4 @@
-jQuery( document ).ready(function($) {
-    $(function () {
-        $('#datetimepicker1').datetimepicker({
-            locale: 'de',
-            calendarWeeks: true,
-            format: 'DD-MM-YYYY'
-        });
-    });
-
-    var validator = $( "#newEventForm" ).validate({
-        ignore: 'input[type="button"],input[type="submit"]',
-        errorClass: "has-error",
-        validClass: "has-success",
-        highlight: function(element, errorClass, validClass) {
-            $(element).parent("div").addClass(errorClass).removeClass(validClass);
-        },
-        unhighlight: function(element, errorClass, validClass) {
-            $(element).parent("div").removeClass(errorClass).addClass(validClass);
-        },
-        rules: {
-            genius_bar: {
-                required: true
-            },
-            recurring: {
-                required: true
-            },
-            requiregroup: {
-                required: true
-            },
-        }
-    });
-
-      tinymce.init({
-        selector: 'textarea',
-        language: 'de',
-        plugins: "code, link, image",
-        min_height: 300,
-        menubar: false,
-        toolbar: 'undo redo | styleselect | bold italic strikethrough | bullist numlist | link image | code'
-      });
-
-    $('ul.category_tree').bonsai({
-        expandAll: false,
-        checkboxes: true, // depends on jquery.qubit plugin
-        handleDuplicateCheckboxes: false // optional
-    });
+TYPO3.jQuery( document ).ready(function($) {
 
     $("#tab-eventtype .radiogroup label").click(function () {
 
@@ -107,7 +62,7 @@ function checkBoxContacts(objThis) {
 }
 
 // add new event initCheckBoxContacts
-addEvent(window, "load", initCheckBoxContacts);
+//addEvent(window, "load", initCheckBoxContacts);
 function initCheckBoxContacts() {
     CheckBoxContacts.init();
 }
