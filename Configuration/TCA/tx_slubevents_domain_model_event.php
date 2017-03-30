@@ -28,14 +28,14 @@ return [
         'requestUpdate'            => 'genius_bar, external_registration',
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, start_date_time, all_day, end_date_time, sub_end_date_time, teaser, description, min_subscriber, max_subscriber, audience, sub_end_date_info_sent, no_search, genius_bar, recurring, cancelled, categories, subscribers, location, discipline, contact',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, start_date_time, all_day, end_date_time, sub_end_date_time, teaser, description, min_subscriber, max_subscriber, audience, sub_end_date_info_sent, no_search, genius_bar, recurring, recurring_options, recurring_end_date_time, cancelled, categories, subscribers, location, discipline, contact',
     ],
     'types'     => [
         // Single event
         '0' => [
             'showitem' => '' .
                 '--div--;Was und Wann,' .
-                'genius_bar,recurring,title,' .
+                'genius_bar,title,' .
                 '--palette--;' . $LL . 'tx_slubevents_domain_model_event.start;paletteStart,' .
                 '--palette--;' . $LL . 'tx_slubevents_domain_model_event.end;paletteEnd,' .
                 'location,' .
@@ -53,6 +53,8 @@ return [
                 'discipline,' .
                 '--div--;Angemeldete Teilnehmer,' .
                 'subscribers,' .
+                '--div--;Wiederholung,' .
+                '--palette--;;paletteRecurring,' .
                 '--div--;Extras,' .
                 'hidden;;1,' .
                 'onlinesurvey,' .
@@ -62,15 +64,15 @@ return [
     'palettes'  => [
         'paletteStart'           => [
             'showitem'       => 'start_date_time,all_day,cancelled',
-            'canNotCollapse' => true,
         ],
         'paletteEnd'             => [
             'showitem'       => 'end_date_time_select, --linebreak--, end_date_time',
-            'canNotCollapse' => true,
         ],
         'paletteEndSubscription' => [
             'showitem'       => 'sub_end_date_time_select, --linebreak--,  sub_end_date_time, sub_end_date_info_sent',
-            'canNotCollapse' => true,
+        ],
+        'paletteRecurring'       => [
+            'showitem'       => 'recurring, --linebreak--, recurring_options, recurring_end_date_time',
         ],
     ],
     'columns'   => [
@@ -254,6 +256,7 @@ return [
                     ['12:00', 720],
                     ['24:00', 1440],
                     ['48:00', 2880],
+                    ['72:00', 2880],
                 ],
                 'size'     => 1,
                 'maxitems' => 1,
@@ -392,6 +395,31 @@ return [
             'config'  => [
                 'type'    => 'check',
                 'default' => 0,
+            ],
+        ],
+        'recurring_options'        => [
+            'displayCond' => 'FIELD:recurring:REQ:true',
+            'exclude' => 0,
+            'label'   => $LL . 'tx_slubevents_domain_model_event.recurring_options',
+            'config'  => [
+                'type'  => 'user',
+                'size'  => 60,
+                'userFunc' => 'Slub\\SlubEvents\\Slots\\Tceforms->recurring_options',
+                'parameters' => array(
+                        'color' => 'green'
+                )
+            ],
+        ],
+        'recurring_end_date_time'        => [
+            'displayCond' => 'FIELD:recurring:REQ:true',
+            'exclude' => 0,
+            'label'   => $LL . 'tx_slubevents_domain_model_event.recurring_end_date_time',
+            'config'  => [
+                'type'     => 'input',
+                'size'     => 10,
+                'eval'     => 'datetime',
+                'checkbox' => 1,
+                'default'  => 0,
             ],
         ],
         'cancelled'                => [

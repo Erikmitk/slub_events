@@ -67,10 +67,10 @@ if (TYPO3_MODE === 'BE') {
 
     // prefill BE user data in event form
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tceforms.php']['getMainFieldsClass'][] =
-        'EXT:' . $_EXTKEY . '/Classes/Slots/Tceforms.php:Tx_SlubEvents_Slots_Tceforms';
+        Slub\SlubEvents\Slots\Tceforms::class;
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tceforms.php']['getSingleFieldClass'][] =
-        'EXT:' . $_EXTKEY . '/Classes/Slots/Tceforms.php:Tx_SlubEvents_Slots_Tceforms';
+        Slub\SlubEvents\Slots\Tceforms::class;
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][] =
         'EXT:' . $_EXTKEY . '/Classes/Slots/HookPreProcessing.php:HookPreProcessing';
